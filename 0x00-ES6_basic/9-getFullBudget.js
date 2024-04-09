@@ -12,5 +12,6 @@ export default function getFullBudgetObject(income, gdp, capita) {
       return `${this.income} euros`;
     },
   };
+
   return fullBudget;
 }
