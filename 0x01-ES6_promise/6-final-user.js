@@ -16,6 +16,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     status: 'rejected',
     value: error.toString,
   }));
-  const result = Promise.allSettled([signUpPromise, uploadPhotoPromise]);
-  return result;
+  return Promise.allSettled([signUpPromise, uploadPhotoPromise])
+    .then((results) => results);
 }
