@@ -16,6 +16,6 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     status: 'rejected',
     value: error,
   }));
-  const result = await Promise.all([signUpPromise, uploadPhotoPromise]);
+  const result = await Promise.allSettled([signUpPromise, uploadPhotoPromise]);
   return result;
 }
