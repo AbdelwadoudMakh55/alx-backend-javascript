@@ -4,7 +4,7 @@ export default function clenSet(set, startString) {
     return '';
   }
   set.forEach((word) => {
-    if (word.startsWith(startString)) {
+    if (word.startsWith(startString) && startString !== word) {
       arr.push(word.replace(startString, ''));
     }
   });
