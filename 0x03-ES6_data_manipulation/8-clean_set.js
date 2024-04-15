@@ -4,8 +4,8 @@ export default function clenSet(set, startString) {
     return '';
   }
   set.forEach((word) => {
-    if (word.toLowerCase().startsWith(startString)) {
-      arr.push(word.replace(startString, ''));
+    if (word.startsWith(startString)) {
+      arr.push(word.slice(startString.length));
     }
   });
   return arr.join('-');
