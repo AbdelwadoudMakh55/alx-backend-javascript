@@ -4,7 +4,7 @@ export default function clenSet(set, startString) {
   }
   let result = '';
   set.forEach((word) => {
-    if (word.startsWith(startString) && startString !== word) {
+    if (word.startsWith(startString)) {
       result += `${word.slice(startString.length)}-`;
     }
   });
