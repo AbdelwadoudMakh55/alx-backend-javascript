@@ -1,12 +1,12 @@
 export default function clenSet(set, startString) {
-  const arr = [];
   if (startString.length === 0) {
     return '';
   }
+  let result = '';
   set.forEach((word) => {
     if (word.startsWith(startString) && startString !== word) {
-      arr.push(word.slice(startString.length));
+      result += `${word.slice(startString.length)}-`;
     }
   });
-  return arr.join('-');
+  return result.slice(0, -1);
 }
