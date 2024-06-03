@@ -27,7 +27,7 @@ function countStudents(path) {
           const out = `Number of students in ${key}: ${value[0]}. List: ${ListOfStudents}`;
           console.log(out);
         }
-        resolve(data);
+        resolve();
       }
     });
   });
