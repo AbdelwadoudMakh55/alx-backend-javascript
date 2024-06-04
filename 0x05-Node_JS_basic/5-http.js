@@ -1,5 +1,4 @@
 const http = require('http');
-const process = require('process');
 const fs = require('fs');
 
 const app = http.createServer((req, res) => {
