@@ -10,7 +10,8 @@ const app = http.createServer((req, res) => {
   } else if (req.url === '/students') {
     fs.readFile(filePath, 'utf-8', (err, data) => {
       if (err) {
-        return (new Error('Cannot load the database'));
+        res.write('This is the list of our students');
+        return res.end();
       }
       const lines = data.split('\n').filter((line) => line !== '');
       const fields = {};
