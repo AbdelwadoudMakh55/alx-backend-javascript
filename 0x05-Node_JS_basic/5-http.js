@@ -3,7 +3,7 @@ const process = require('process');
 const fs = require('fs');
 
 const app = http.createServer((req, res) => {
-  const filePath = process.argv[2] === undefined ? 'database.csv' : process.argv[2];
+  const filePath = process.argv[2];
   if (req.url === '/') {
     res.write('Hello Holberton School!');
     res.end();
