@@ -3,7 +3,7 @@ const process = require('process');
 const fs = require('fs');
 
 const app = http.createServer((req, res) => {
-  const filePath = process.argv[2] !== undefined ? 'database.csv' : process.argv[2];
+  const filePath = process.argv[2] === undefined ? 'database.csv' : process.argv[2];
   if (req.url === '/') {
     res.write('Hello Holberton School!');
     res.end();
@@ -12,24 +12,21 @@ const app = http.createServer((req, res) => {
       if (err) {
         return (new Error('Cannot load the database'));
       }
-      const lines = data.split('\n');
-      let numberOfStudents = -1;
+      const lines = data.split('\n').filter((line) => line !== '');
       const fields = {};
-      lines.forEach((element) => {
+      lines.slice(1).forEach((element) => {
         const columns = element.split(',');
-        if (element !== '') {
-          numberOfStudents += 1;
-        }
-        if (columns[3] !== 'field' && columns[3] in fields) {
+        if (columns[3] in fields) {
           fields[columns[3]][0] += 1;
           fields[columns[3]].push(columns[0]);
-        } else if (columns[3] !== 'field') {
+        } else {
           fields[columns[3]] = [1];
+          fields[columns[3]].push(columns[0]);
         }
       });
       const output = [];
       output.push('This is the list of our students');
-      output.push(`Number of students: ${numberOfStudents}`);
+      output.push(`Number of students: ${lines.length - 1}`);
       for (const [key, value] of Object.entries(fields)) {
         const ListOfStudents = value.slice(1).join(', ');
         output.push(`Number of students in ${key}: ${value[0]}. List: ${ListOfStudents}`);
