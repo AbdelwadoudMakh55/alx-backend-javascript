@@ -12,7 +12,7 @@ describe('SUM', () => {
     assert.equal(calculateNumber('SUM', 4.2, 5.2), 9);
   });
 });
-describe('SUBSTRACT', () => {
+describe('SUBTRACT', () => {
   it('Substract b from a', () => {
     assert.equal(calculateNumber('SUBSTRACT', 4.1, -5.2), 9);
   });
