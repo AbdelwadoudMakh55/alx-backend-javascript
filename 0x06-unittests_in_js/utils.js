@@ -2,7 +2,7 @@ const Utils = {
   calculateNumber: (type, a, b) => {
     if (type === 'SUM')
       return Math.round(a) + Math.round(b);
-    else if (type === 'SUBSTRACT')
+    else if (type === 'SUBTRACT')
       return Math.round(a) - Math.round(b);
     else if (type == 'DIVIDE') {
       round_b = Math.round(b);
