@@ -13,16 +13,16 @@ describe('SUM', () => {
   });
 });
 describe('SUBTRACT', () => {
-  it('Substract b from a', () => {
+  it('Subtract b from a', () => {
     assert.equal(calculateNumber('SUBTRACT', 4.1, -5.2), 9);
   });
-  it('Substract b from a', () => {
+  it('Subtract b from a', () => {
     assert.equal(calculateNumber('SUBTRACT', 7.6, -5), 13);  
   });
-  it('Substract b from a', () => {
+  it('Subtract b from a', () => {
     assert.equal(calculateNumber('SUBTRACT', 10.5, 7.3), 4);
   });
-  it('Substract b from a', () => {
+  it('Subtract b from a', () => {
     assert.equal(calculateNumber('SUBTRACT', 7.3, 10.5), -4);
   });
 });

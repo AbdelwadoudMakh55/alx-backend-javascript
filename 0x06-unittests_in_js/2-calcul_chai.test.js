@@ -12,15 +12,15 @@ describe('SUM', () => {
     expect(calculateNumber('SUM', 4.2, 5.2)).to.equal(9);
   });
 });
-describe('SUBSTRACT', () => {
-  it('Substract b from a', () => {
-    expect(calculateNumber('SUBSTRACT', 4.1, -5.2)).to.equal(9);
+describe('SUBTRACT', () => {
+  it('Subtract b from a', () => {
+    expect(calculateNumber('SUBTRACT', 4.1, -5.2)).to.equal(9);
   });
-  it('Substract b from a', () => {
-    expect(calculateNumber('SUBSTRACT', 7.6, -5)).to.equal(13);  
+  it('Subtract b from a', () => {
+    expect(calculateNumber('SUBTRACT', 7.6, -5)).to.equal(13);  
   });
-  it('Substract b from a', () => {
-    expect(calculateNumber('SUBSTRACT', 10.5, 7.3)).to.equal(4);
+  it('Subtract b from a', () => {
+    expect(calculateNumber('SUBTRACT', 10.5, 7.3)).to.equal(4);
   });
 });
 describe('DIVIDE', () => {
