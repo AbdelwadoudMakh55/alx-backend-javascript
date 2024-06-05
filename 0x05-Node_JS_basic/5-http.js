@@ -35,17 +35,14 @@ function countStudents(path) {
 const app = http.createServer((req, res) => {
   const filePath = process.argv[2];
   if (req.url === '/') {
-    res.write('Hello Holberton School!');
-    res.end();
+    res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     countStudents(filePath)
       .then((output) => {
-        res.write(`This is the list of our students\n${output}`);
-        res.end();
+        res.end(`This is the list of our students\n${output}`);
       })
       .catch(() => {
-        res.write('This is the list of our students');
-        res.end();
+        res.end('This is the list of our students\n');
       });
   }
 }).listen(1245);
