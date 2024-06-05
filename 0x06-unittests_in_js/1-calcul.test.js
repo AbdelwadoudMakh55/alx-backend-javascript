@@ -22,6 +22,9 @@ describe('SUBSTRACT', () => {
   it('Substract b from a', () => {
     assert.equal(calculateNumber('SUBSTRACT', 10.5, 7.3), 4);
   });
+  it('Substract b from a', () => {
+    assert.equal(calculateNumber('SUBSTRACT', 7.3, 10.5), -4);
+  });
 });
 describe('DIVIDE', () => {
   it('Divide a by b', () => {
@@ -32,5 +35,8 @@ describe('DIVIDE', () => {
   });
   it('Divide a by b', () => {
     assert.equal(calculateNumber('DIVIDE', 10.4, 4.6), 2);
+  });
+  it('Divide a by b', () => {
+    assert.equal(calculateNumber('DIVIDE', 1.9, 4.6), 0.4);
   });
 });
