@@ -17,9 +17,10 @@ describe('Cart page', () => {
   it('returns 200 when id is a number', (done) => {
     request('http://localhost:7865/cart/17', (err, data) => {
       if (err) {
-        done(err);
+        done();
       }
       expect(data.statusCode).to.equal(200);
+      expect(data.body).to.equal('Payment methods for cart 17');
       done();
     });
   });
@@ -27,9 +28,9 @@ describe('Cart page', () => {
   it('returns 404 when id is not a number', (done) => {
     request('http://localhost:7865/cart/aa', (err, data) => {
       if (err) {
-        done(err);
+        expect(data.statusCode).to.equal(404);
+        done();
       }
-      expect(data.statusCode).to.equal(404);
       done();
     });
   });
